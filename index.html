@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mariage de Aminata & Cheikh - Invitation Premium</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --bg-cream: #faf7f2;
+      --gold: #c5a880;
+      --gold-dark: #a38458;
+      --gold-light: #f3ece3;
+      --dark-brown: #2d2621;
+      --text-muted: #6e655f;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      overflow-x: hidden;
+      background: var(--bg-cream);
+      color: var(--dark-brown);
+      font-family: "Montserrat", sans-serif;
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .hero-banner {
+      display: flex;
+      width: 100%;
+      min-height: 260px;
+      height: 40vh;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-bottom: 3px solid var(--gold);
+      background:
+        linear-gradient(
+          rgba(45, 38, 33, .15),
+          rgba(45, 38, 33, .3)
+        ),
+        url("weddinghand1.jpg") center / cover no-repeat;
+    }
+
+    .hero-text {
+      padding: 0 20px;
+      color: var(--white);
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.1rem, 5vw, 1.8rem);
+      letter-spacing: clamp(2px, 1vw, 6px);
+      text-align: center;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, .3);
+      text-transform: uppercase;
+    }
+
+    .main-container {
+      width: calc(100% - 30px);
+      max-width: 600px;
+      margin: -50px auto 60px;
+      padding: clamp(22px, 5vw, 40px 30px);
+      border: 1px solid var(--gold-light);
+      border-radius: 24px;
+      background: var(--white);
+      box-shadow: 0 15px 45px rgba(45, 38, 33, .08);
+    }
+
+    h1,
+    h2,
+    h3,
+    .event-title {
+      font-family: "Cormorant Garamond", serif;
+    }
+
+    h1 {
+      margin: 15px 0;
+      font-size: clamp(2.2rem, 9vw, 3.2rem);
+      font-weight: 400;
+      line-height: 1;
+      text-align: center;
+    }
+
+    h2 {
+      margin: 35px 0 20px;
+      color: var(--gold-dark);
+      font-size: clamp(1.6rem, 6vw, 2rem);
+      font-weight: 500;
+      line-height: 1.1;
+      text-align: center;
+    }
+
+    h2::after {
+      display: block;
+      width: 40px;
+      height: 1px;
+      margin: 8px auto 0;
+      background: var(--gold);
+      content: "";
+    }
+
+    .section-intro {
+      margin-bottom: 30px;
+      color: var(--text-muted);
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(.95rem, 3vw, 1.1rem);
+      font-style: italic;
+      text-align: center;
+    }
+
+    .intro-date {
+      font-size: clamp(.75rem, 2.5vw, .95rem);
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+
+    .divider {
+      height: 1px;
+      margin: 35px 0;
+      background: linear-gradient(
+        to right,
+        transparent,
+        var(--gold),
+        transparent
+      );
+    }
+
+    /* Compte à rebours */
+
+    .countdown-wrapper {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      padding: 20px;
+      border: 1px solid var(--gold-light);
+      border-radius: 16px;
+      background: var(--bg-cream);
+      text-align: center;
+    }
+
+    .countdown-val {
+      display: block;
+      color: var(--gold-dark);
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.7rem, 6vw, 2.2rem);
+      font-weight: 600;
+    }
+
+    .countdown-lbl {
+      display: block;
+      color: var(--text-muted);
+      font-size: clamp(.58rem, 2vw, .7rem);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* Événements */
+
+    .event-card {
+      margin-bottom: 15px;
+      padding: 15px 20px;
+      border-left: 3px solid var(--gold);
+      border-radius: 0 12px 12px 0;
+      background: var(--bg-cream);
+      text-align: left;
+    }
+
+    .event-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 5px;
+    }
+
+    .event-title {
+      font-size: clamp(1.1rem, 4vw, 1.4rem);
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .event-time {
+      flex-shrink: 0;
+      padding: 2px 10px;
+      border: 1px solid var(--gold-light);
+      border-radius: 20px;
+      background: var(--white);
+      color: var(--gold-dark);
+      font-size: .85rem;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .event-card p {
+      color: var(--text-muted);
+      font-size: clamp(.82rem, 2.5vw, .9rem);
+    }
+
+    /* Adresse et itinéraire sans carte intégrée */
+
+    .location-box {
+  max-width: 420px;
+  margin: 28px auto;
+  padding: 18px 20px 20px;
+  border: 1px solid #d8c7ac;
+  border-radius: 12px;
+  background: #f4ebdf;
+  text-align: center;
+}
+
+.location-box h3 {
+  margin: 0 0 8px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #3d2d1f;
+}
+
+.location-box p {
+  margin: 0 0 18px;
+  color: #544b45;
+  font-size: 1rem;
+}
+
+.location-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.location-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 220px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 12px;
+  background: #2f2a27;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.location-btn:hover {
+  background: #4a3d35;
+}
+    /* Galerie */
+
+    .gallery-help {
+      margin-bottom: 10px;
+      color: var(--text-muted);
+      font-size: .9rem;
+      text-align: center;
+    }
+
+    .mosaic-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .mosaic-img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1;
+      border: 1px solid var(--gold-light);
+      border-radius: 8px;
+      cursor: pointer;
+      object-fit: cover;
+      transition: transform .2s, border-color .2s;
+    }
+
+    .mosaic-img:hover {
+      border-color: var(--gold);
+      transform: scale(1.04);
+    }
+
+    /* Lightbox */
+
+    .lightbox {
+      position: fixed;
+      z-index: 1000;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(45, 38, 33, .95);
+    }
+
+    .lightbox-img {
+      max-width: 95%;
+      max-height: 85vh;
+      border: 2px solid var(--gold);
+      border-radius: 8px;
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      display: flex;
+      width: 45px;
+      height: 45px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, .3);
+      color: var(--white);
+      cursor: pointer;
+      font-size: 2rem;
+    }
+
+    /* RSVP */
+
+    .rsvp-box {
+      padding: clamp(20px, 5vw, 25px);
+      border: 1px solid var(--gold-light);
+      border-radius: 16px;
+      background: var(--bg-cream);
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: .8rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .input-group input,
+    .input-group select {
+      width: 100%;
+      min-height: 43px;
+      padding: 10px 14px;
+      border: 1px solid #e0d8d0;
+      border-radius: 8px;
+      outline: none;
+      background: var(--white);
+      font-family: inherit;
+      font-size: .95rem;
+    }
+
+    .input-group input:focus,
+    .input-group select:focus {
+      border-color: var(--gold);
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 14px;
+      border: 0;
+      border-radius: 8px;
+      background: var(--dark-brown);
+      color: var(--white);
+      cursor: pointer;
+      font-size: .9rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: background .3s;
+    }
+
+    .submit-btn:hover {
+      background: var(--gold-dark);
+    }
+
+    @media (max-width: 600px) {
+      .hero-banner {
+        min-height: 220px;
+        height: 32vh;
+      }
+
+      .main-container {
+        width: calc(100% - 20px);
+        margin-top: -30px;
+        margin-bottom: 30px;
+        border-radius: 16px;
+      }
+
+      .countdown-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 15px;
+      }
+
+      .event-header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .event-time {
+        margin-top: 4px;
+      }
+
+      .location-buttons {
+        grid-template-columns: 1fr;
+      }
+
+      .mosaic-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+      }
+
+      .lightbox-close {
+        top: 10px;
+        right: 10px;
+      }
+    }
+
+    @media (max-width: 350px) {
+      .main-container {
+        padding: 18px 14px;
+      }
+
+      .hero-text {
+        font-size: 1rem;
+        letter-spacing: 2px;
+      }
+
+      .mosaic-gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="hero-banner">
+    <div class="hero-text">Fatiha &amp; Réception</div>
+  </header>
+
+  <main class="main-container">
+    <div>
+      <p style="color: var(--gold-dark); font-size: .8rem; letter-spacing: 4px; text-align: center; text-transform: uppercase;">
+        Invitation Officielle
+      </p>
+
+      <h1>Aminata &amp; Cheikh</h1>
+
+      <p class="section-intro">
+        « Et parmi Ses signes Il a créé de vous, pour vous, des épouses
+        pour que vous viviez en tranquillité auprès d'elles... »
+      </p>
+
+      <p class="intro-date">DIMANCHE 27 DÉCEMBRE 2026</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <section class="countdown-wrapper" aria-label="Compte à rebours">
+      <div>
+        <span class="countdown-val" id="d_days">00</span>
+        <span class="countdown-lbl">Jours</span>
+      </div>
+
+      <div>
+        <span class="countdown-val" id="d_hours">00</span>
+        <span class="countdown-lbl">Heures</span>
+      </div>
+
+      <div>
+        <span class="countdown-val" id="d_minutes">00</span>
+        <span class="countdown-lbl">Minutes</span>
+      </div>
+
+      <div>
+        <span class="countdown-val" id="d_seconds">00</span>
+        <span class="countdown-lbl">Secondes</span>
+      </div>
+    </section>
+
+    <h2>Déroulement de la Journée</h2>
+
+    <article class="event-card">
+      <div class="event-header">
+        <span class="event-title">Mariage Religieux (Fatiha)</span>
+        <span class="event-time">17h00</span>
+      </div>
+
+      <p>
+        À la Grande Mosquée. La présence des parents et proches y est
+        attendue pour la bénédiction.
+      </p>
+    </article>
+
+    <article class="event-card">
+      <div class="event-header">
+        <span class="event-title">Réception &amp; Cocktail</span>
+        <span class="event-time">21h00</span>
+      </div>
+
+      <p>
+        HLM Grand Médine, Dakar. Rendez-vous à partir de 20h30 pour
+        célébrer ensemble autour d'un grand buffet traditionnel.
+      </p>
+    </article>
+
+    <!-- Itinéraire : aucun iframe ni carte affichée -->
+    <div class="location-box">
+  <h3>HLM Grand Médine</h3>
+  <p>Dakar, Sénégal</p>
+
+  <div class="location-actions">
+    <a
+      class="location-btn"
+      href="https://www.google.com/maps/dir/?api=1&destination=HLM+Grand+M%C3%A9dine,+Dakar,+S%C3%A9n%C3%A9gal"
+      target="_blank"
+      rel="noopener"
+    >
+      📍 Itinéraire
+    </a>
+  </div>
+</div>
+
+    <h2>Galerie des Mariés</h2>
+
+    <p class="gallery-help">
+      Cliquez sur une photo pour l'agrandir
+    </p>
+
+    <div class="mosaic-gallery">
+      <img
+        class="mosaic-img"
+        src="weddingafr.jpg"
+        alt="Mariage"
+        onclick="openLightbox(this.src)"
+      >
+
+      <img
+        class="mosaic-img"
+        src="weddingafr1.jpg"
+        alt="Mariage"
+        onclick="openLightbox(this.src)"
+      >
+
+      <img
+        class="mosaic-img"
+        src="weddinghand.jpg"
+        alt="Mariage"
+        onclick="openLightbox(this.src)"
+      >
+
+      <img
+        class="mosaic-img"
+        src="weddingaf2.jpg"
+        alt="Mariage"
+        onclick="openLightbox(this.src)"
+      >
+
+      <img
+        class="mosaic-img"
+        src="weddingl1.jpg"
+        alt="Mariage"
+        onclick="openLightbox(this.src)"
+      >
+
+      <img
+        class="mosaic-img"
+        src="weddingshoot1.jpg"
+        alt="Mariage"
+        onclick="openLightbox(this.src)"
+      >
+    </div>
+
+    <div
+      class="lightbox"
+      id="customLightbox"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Image agrandie"
+    >
+      <button
+        class="lightbox-close"
+        type="button"
+        onclick="closeLightbox()"
+        aria-label="Fermer l'image"
+      >
+        &times;
+      </button>
+
+      <img
+        class="lightbox-img"
+        id="lightboxImg"
+        src=""
+        alt="Agrandissement"
+      >
+    </div>
+
+    <h2>Votre Présence</h2>
+
+    <form class="rsvp-box" id="localRsvpForm">
+      <div class="input-group">
+        <label for="fullname">Nom complet</label>
+        <input
+          id="fullname"
+          type="text"
+          required
+          placeholder="Ex : Fatou Diop"
+        >
+      </div>
+
+      <div class="input-group">
+        <label for="status">Serez-vous des nôtres ?</label>
+
+        <select id="status" required>
+          <option value="present">Oui, je serai présent(e)</option>
+          <option value="absent">Malheureusement non</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label for="count">Nombre de personnes</label>
+
+        <select id="count">
+          <option value="1">Seul(e)</option>
+          <option value="2">En couple (2 personnes)</option>
+          <option value="3">Famille (3 personnes et plus)</option>
+        </select>
+      </div>
+
+      <button class="submit-btn" type="submit">
+        Confirmer ma venue
+      </button>
+    </form>
+  </main>
+
+  <script>
+    /*
+      COMPTE À REBOURS
+      Remplace cette date par la vraie date si nécessaire.
+    */
+    const targetDate = new Date(
+      "2026-12-27T17:00:00"
+    ).getTime();
+
+    const timerInterval = setInterval(updateCountdown, 1000);
+
+    function updateCountdown() {
+      const now = Date.now();
+      const timeLeft = targetDate - now;
+
+      if (timeLeft <= 0) {
+        clearInterval(timerInterval);
+
+        document.querySelector(".countdown-wrapper").innerHTML =
+          "<div style=\"grid-column: 1 / -1; color: #A38458; font-family: serif; font-size: 1.3rem; font-weight: bold;\">Heureux Mariage ! 🎉</div>";
+
+        return;
+      }
+
+      const days = Math.floor(
+        timeLeft / (1000 * 60 * 60 * 24)
+      );
+
+      const hours = Math.floor(
+        (timeLeft % (1000 * 60 * 60 * 24)) /
+        (1000 * 60 * 60)
+      );
+
+      const minutes = Math.floor(
+        (timeLeft % (1000 * 60 * 60)) /
+        (1000 * 60)
+      );
+
+      const seconds = Math.floor(
+        (timeLeft % (1000 * 60)) /
+        1000
+      );
+
+      document.getElementById("d_days").textContent =
+        String(days).padStart(2, "0");
+
+      document.getElementById("d_hours").textContent =
+        String(hours).padStart(2, "0");
+
+      document.getElementById("d_minutes").textContent =
+        String(minutes).padStart(2, "0");
+
+      document.getElementById("d_seconds").textContent =
+        String(seconds).padStart(2, "0");
+    }
+
+    updateCountdown();
+
+    /*
+      GALERIE / LIGHTBOX
+    */
+    function openLightbox(src) {
+      const lightbox = document.getElementById("customLightbox");
+      const lightboxImg = document.getElementById("lightboxImg");
+
+      lightboxImg.src = src;
+      lightbox.style.display = "flex";
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById("customLightbox");
+
+      lightbox.style.display = "none";
+      document.body.style.overflow = "";
+    }
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        closeLightbox();
+      }
+    });
+
+    /*
+      RSVP
+    */
+    document
+      .getElementById("localRsvpForm")
+      .addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const guestName =
+          document.getElementById("fullname").value ||
+          "Cher invité";
+
+        alert(
+          "Barkalou, " +
+          guestName +
+          " ! Vos informations ont bien été transmises."
+        );
+      });
+  </script>
+</body>
+</html>
